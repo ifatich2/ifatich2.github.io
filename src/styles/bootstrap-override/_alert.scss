@@ -1,0 +1,52 @@
+.alert {
+	--bs-alert-bg: transparent;
+	--bs-alert-padding-x: .75rem;
+	--bs-alert-padding-y: .75rem;
+	--bs-alert-color: var(--g-kit-white);
+	--bs-alert-border-color: transparent;
+	--bs-alert-border: 1px solid var(--bs-alert-border-color);
+	--bs-alert-border-radius: 0.375rem;
+	position: relative;
+	padding: var(--bs-alert-padding-y) var(--bs-alert-padding-x);
+	margin-bottom: var(--bs-alert-margin-bottom);
+	color: var(--bs-alert-color);
+	background-color: var(--bs-alert-bg);
+	border: var(--bs-alert-border);
+	border-radius: var(--bs-alert-border-radius);
+	font-size: .75rem;
+	line-height: 1.25rem;
+}
+.alert-heading {
+	color: var(--bs-alert-color);
+}
+.alert-dismissible {
+	padding-right: 3rem;
+	.btn-close {
+		position: absolute;
+		top: 0;
+		right: 0;
+		z-index: 2;
+		background: transparent url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23FFF'%3e%3cpath d='M9.31876 8.18384C9.00205 7.92238 8.53245 7.93981 8.23613 8.23613C7.92129 8.55097 7.92129 9.06143 8.23613 9.37627L11.1932 12.3333L8.23613 15.2904C7.92129 15.6052 7.92129 16.1157 8.23613 16.4305C8.53245 16.7269 9.00205 16.7443 9.31876 16.4828L9.37627 16.4305L12.3333 13.4735L15.2904 16.4305L15.3479 16.4828C15.6646 16.7443 16.1342 16.7269 16.4305 16.4305C16.7454 16.1157 16.7454 15.6052 16.4305 15.2904L13.4735 12.3333L16.4305 9.37627C16.7454 9.06143 16.7454 8.55097 16.4305 8.23613C16.1342 7.93981 15.6646 7.92238 15.3479 8.18384L15.2904 8.23613L12.3333 11.1932L9.37627 8.23613L9.31876 8.18384Z'/%3e%3c/svg%3e") center/1.5rem auto no-repeat;
+		padding: 1rem 1rem;
+		opacity: 1;
+	}
+}
+.alert-link {
+	color: var(--g-kit-white);
+}
+.alert-success {
+	--bs-alert-color: var(--g-kit-white);
+	--bs-alert-bg: var(--g-kit-lime-50);
+}
+.alert-info {
+	--bs-alert-color:  var(--g-kit-white);
+	--bs-alert-bg: var(--g-kit-blue-50);
+}
+.alert-warning {
+	--bs-alert-color:  var(--g-kit-white);
+	--bs-alert-bg: var(--g-kit-orange-50);
+}
+.alert-danger {
+	--bs-alert-color:  var(--g-kit-white);
+	--bs-alert-bg: var(--g-kit-red-50);
+}

@@ -1,0 +1,58 @@
+.btn-ripple {
+    position: relative;
+    overflow: hidden;
+    transition: background 400ms;
+
+    .ripple {
+        position: absolute;
+        z-index: 0;
+        border-radius: 50%;
+        transform: scale(0);
+        animation: ripple 600ms linear;
+        background-color: rgba(255, 255, 255, 0.3);
+    }
+
+    &.btn-primary {
+        .ripple {
+            background-color: $btn-ripple-primary-color;
+        }
+    }
+
+    &.btn-secondary {
+        .ripple {
+            background-color: $btn-ripple-secondary-color;
+        }
+    }
+
+    &.btn-tertiary {
+        .ripple {
+            background-color: $btn-ripple-tertiary-color;
+        }
+    }
+
+    &.btn-neutral {
+        .ripple {
+            background-color: $btn-ripple-neutral-color;
+        }
+    }
+
+    //&-light {
+    //    .ripple {
+    //        background-color: rgba(255, 255, 255, 0.2);
+    //    }
+    //}
+    //
+    //&-dark {
+    //    .ripple {
+    //        background-color: rgba(0, 0, 0, 0.15);
+    //    }
+    //}
+}
+
+
+@keyframes ripple {
+    to {
+        transform: scale(4);
+        opacity: 0;
+    }
+}

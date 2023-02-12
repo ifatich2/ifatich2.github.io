@@ -1,0 +1,32 @@
+.progress {
+    --g-bs-progress-height: 10px;
+}
+
+
+.varian-progress {
+    h5 {
+        margin-bottom: 0;
+        color: $text-primary;
+    }
+
+    p {
+        font-size: var(--g-kit-font-size-sigma);
+        line-height: var(--g-kit-line-height-sigma);
+        font-weight: var(--g-kit-font-weight-regular);
+
+        color: $text-secondary;
+
+        margin-bottom: 0;
+    }
+
+    .bottom-icon {
+        vertical-align: bottom;
+        font-size: var(--g-kit-font-size-omega);
+        line-height: var(--g-kit-line-height-omega);
+        font-weight: var(--g-kit-font-weight-regular);
+
+        img {
+            margin-top: -6px;
+        }
+    }
+}

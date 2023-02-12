@@ -1,0 +1,148 @@
+/* DOCUMENT */
+$prefix: "g-bs-";
+/* BODY */
+$font-size-base: 1rem; /* 16px */
+$font-weight: 600;
+$body-bg: $white;
+$body-color: $text-primary;
+
+
+
+/* HEADING */
+$headings-font-weight: var(--g-kit-font-weight-bold);
+
+
+
+/* BUTTON */
+
+$input-btn-font-family: $font-family-base;
+$btn-font-size: var(--g-kit-font-size-sigma);
+$btn-font-weight: var(--g-kit-font-weight-bold);
+$input-btn-focus-width: 0;
+
+/* PRIMARY */
+
+/* DEFAULT */
+$btn-primary-color: $text-white;
+$btn-bg-primary-color: $lime-50;
+$btn-border-primary-color: $lime-50;
+$btn-ripple-primary-color: $lime-80;
+/* HOVER */
+$btn-primary-hover-color: $text-white;
+$btn-bg-primary-hover-color: $lime-60;
+$btn-border-primary-hover-color: $lime-60;
+/* ACTIVE */
+$btn-primary-active-color: $text-white;
+$btn-bg-primary-active-color: $lime-80;
+$btn-border-primary-active-color: $lime-80;
+/* DISABLED */
+$btn-primary-disabled-color: $text-white;
+$btn-bg-primary-disabled-color: $black-50;
+$btn-border-primary-disabled-color: $black-50;
+
+/* SECONDARY */
+
+/* DEFAULT */
+$btn-secondary-color: $lime-50;
+$btn-bg-secondary-color: $white;
+$btn-border-secondary-color: $lime-50;
+$btn-ripple-secondary-color: $black-20;
+/* HOVER */
+$btn-secondary-hover-color: $lime-60;
+$btn-bg-secondary-hover-color: $white;
+$btn-border-secondary-hover-color: $lime-60;
+/* ACTIVE */
+$btn-secondary-active-color: $lime-60;
+$btn-bg-secondary-active-color: $white;
+$btn-border-secondary-active-color: $lime-60;
+/* DISABLED */
+$btn-secondary-disabled-color: $black-40;
+$btn-bg-secondary-disabled-color: $black-10;
+$btn-border-secondary-disabled-color: $black-40;
+
+/* TERTIARY */
+
+/* DEFAULT */
+$btn-tertiary-color: $lime-50;
+$btn-bg-tertiary-color: $white;
+$btn-border-tertiary-color: $white;
+$btn-ripple-tertiary-color: $black-20;
+/* HOVER */
+$btn-tertiary-hover-color: $lime-60;
+$btn-bg-tertiary-hover-color: $white;
+$btn-border-tertiary-hover-color: $white;
+/* ACTIVE */
+$btn-tertiary-active-color: $lime-60;
+$btn-bg-tertiary-active-color: $white;
+$btn-border-tertiary-active-color: $white;
+/* DISABLED */
+$btn-tertiary-disabled-color: $black-40;
+$btn-bg-tertiary-disabled-color: $white;
+$btn-border-tertiary-disabled-color: $white;
+
+/* NEUTRAL */
+
+/* DEFAULT */
+$btn-neutral-color: $lime-50;
+$btn-bg-neutral-color: $white;
+$btn-border-neutral-color: $black-40;
+$btn-ripple-neutral-color: $black-20;
+/* HOVER */
+$btn-neutral-hover-color: $lime-60;
+$btn-bg-neutral-hover-color: $white;
+$btn-border-neutral-hover-color: $black-40;
+/* ACTIVE */
+$btn-neutral-active-color: $lime-60;
+$btn-bg-neutral-active-color: $white;
+$btn-border-neutral-active-color: $black-40;
+/* DISABLED */
+$btn-neutral-disabled-color: $black-40;
+$btn-bg-neutral-disabled-color: $black-10;
+$btn-border-neutral-disabled-color: $black-40;
+
+
+
+/* FORMS */
+$form-color-primary: $lime-50;
+$form-color-primary-darken-1: $lime-60;
+
+/* FORM CONTROL */
+$input-font-size: var(--g-kit-font-size-omicron);
+$input-line-height-: var(--g-kit-line-height-omicron);
+$input-font-weight: var(--g-kit-font-weight-normal);
+$input-font-style: var(--g-kit-font-style-normal);
+$input-border-radius: 6px;
+$input-padding-y: 12px;
+$input-padding-x: 12px;
+$input-border-color: $black-20;
+$input-hover-border-color: $form-color-primary-darken-1;
+$input-focus-border-color: $form-color-primary;
+$input-placeholder-color: $text-tertiary;
+$input-caret-color: $form-color-primary;
+
+/* FORM LABEL */
+$form-label-font-size: var(--g-kit-font-size-sigma);
+$form-label-line-height-: var(--g-kit-line-height-sigma);
+$form-label-font-weight: var(--g-kit-font-weight-bold);
+$form-label-font-style: var(--g-kit-font-style-normal);
+$form-label-margin-bottom: 4px;
+$form-label-color: $text-primary;
+
+/* FORM TEXT */
+$form-text-font-size: var(--g-kit-font-size-omega);
+$form-text-line-height-: var(--g-kit-line-height-omega);
+$form-text-font-weight: var(--g-kit-font-weight-normal);
+$form-text-font-style: var(--g-kit-font-style-normal);
+$form-text-margin-top: 8px;
+$form-text-color: $text-secondary;
+
+/* FORM SELECT */
+$form-select-focus-box-shadow: none;
+
+/* TABLE */
+$table-striped-order: 2;
+
+/* REBOOT */
+$link-decoration: none;
+$link-hover-decoration: null;
+$font-weight-normal: var(--g-kit-font-weight-normal);

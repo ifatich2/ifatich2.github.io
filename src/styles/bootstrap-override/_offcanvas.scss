@@ -1,0 +1,31 @@
+.offcanvas {
+    border-radius: 12px 12px 0 0;
+    --g-bs-offcanvas-height: max-content;
+    img {
+        width: 100%;
+
+        margin-bottom: 1.5rem;
+    }
+    .title-offcanvas {
+        font-size: var(--g-kit-font-size-kappa);
+        line-height: var(--g-kit-line-height-kappa);
+        font-weight: var(--g-kit-font-weight-bold);
+        margin-bottom: .5rem;
+    }
+    .description-offcanvas {
+        font-size: var(--g-kit-font-size-omicron);
+        line-height: var(--g-kit-line-height-omicron);
+        font-weight: var(--g-kit-font-weight-normal);
+        color: $text-secondary;
+        margin-bottom: 0;
+    }
+}
+
+.offcanvas-header {
+    border-bottom: 1px solid #EEEEEF;
+}
+
+.offcanvas-title {
+    font-size: 1.125rem;
+    line-height: 1.625rem;
+}

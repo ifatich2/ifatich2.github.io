@@ -1,0 +1,37 @@
+.modal {
+    --bs-modal-border-radius: 0.8rem;
+    --bs-modal-box-shadow: none;
+}
+
+@media (min-width: 576px){
+    .modal-sm {
+        --g-bs-modal-width: 360px;
+    }
+}
+    
+.modal img{
+    margin-bottom: .5rem;
+}
+
+.modal h4{
+    font-size: var(--g-kit-font-size-lamda);
+    line-height: var(--g-kit-line-height-lamda);
+    font-weight: var(--g-kit-font-weight-bold);
+    margin-bottom: 0;
+    color: $text-primary;
+}
+
+.modal h6{
+    font-size: var(--g-kit-font-size-lamda);
+    line-height: var(--g-kit-line-height-lamda);
+    font-weight: var(--g-kit-font-weight-bold);
+    margin-bottom: .5rem;
+    color: $black-80;
+}
+
+.modal .modal-body {
+    font-size: var(--g-kit-font-size-omicron);
+    line-height: var(--g-kit-line-height-omicron);
+    font-weight: var(--g-kit-font-weight-normal);
+    color: $text-secondary;
+}

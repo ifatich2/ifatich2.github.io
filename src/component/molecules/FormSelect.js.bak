@@ -1,0 +1,301 @@
+import classNames from 'classnames';
+import { Form, InputGroup } from "react-bootstrap";
+import { forwardRef, useEffect, useRef, useState } from "react";
+import { useFormContext } from "react-hook-form";
+import AnimateHeight from "component/atoms/AnimateHeight";
+import { FormSpinner } from "component/atoms/FormSpinner";
+
+const FormSelect = ({
+                         type = "text",
+                         name,
+                         title,
+                         placeholder,
+                         leftIcon,
+                         rightIcon,
+                         rightAction,
+                         helperText,
+                         errorText,
+                         validText,
+                         isValid,
+                         isInvalid,
+                         isLoading,
+
+                         style, className,
+
+                         ref,
+                         register = () => null,
+                         errors,
+
+                         registerProps,
+                         required,
+                         maxLength,
+                         minLength,
+                         max,
+                         min,
+                         pattern,
+                         disabled,
+                         onChange,
+                         onBlur,
+                         value,
+                         ...props
+                     }) => {
+
+    const inputErrors = errors?.[name];
+
+    const rightActionRef = useRef(null);
+
+    const [rightActionPadding, setRightActionPadding] = useState({});
+    const [validationBackgroundPosition, setValidationBackgroundPosition] = useState({});
+    const [helperTextState, setHelperTextState] = useState([]);
+    const [errorTextState, setErrorTextState] = useState([]);
+    const [validTextState, setValidTextState] = useState([]);
+    const [isValidState, setIsValidState] = useState(false);
+    const [isInvalidState, setIsInvalidState] = useState(false);
+    const [inputErrorsState, setInputErrorsState] = useState({});
+    const [registerPropsState, setRegisterPropsState] = useState();
+
+    // const [regDisabledState, setRegDisabledState] = useState();
+    // const [regRequiredState, setRegRequiredState] = useState();
+    // const [regMaxLengthState, setRegMaxLengthState] = useState();
+    // const [regMinLengthState, setRegMinLengthState] = useState();
+    // const [regMaxState, setRegMaxState] = useState();
+    // const [regMinState, setRegMinState] = useState();
+    // const [regPatternState, setRegPatternState] = useState();
+    // const [regOnChangeState, setRegOnChangeState] = useState();
+    // const [regOnBlurState, setRegOnBlurState] = useState();
+    // const [regValueState, setRegValueState] = useState();
+
+
+    useEffect(() => {
+        let validationIconOffsetWidth = 0
+        if (isValidState || setIsValidState) {
+            validationIconOffsetWidth = 34;
+        }
+        if (rightAction && rightActionRef.current.offsetWidth > 0) {
+            setRightActionPadding({paddingRight: rightActionRef.current.offsetWidth + validationIconOffsetWidth - 12});
+            setValidationBackgroundPosition({backgroundPosition: `right ${46 - 10 + validationIconOffsetWidth}px center`})
+        }
+    }, [rightAction, isValidState, setIsValidState, inputErrors]);
+
+    useEffect(() => {
+        setHelperTextState([]);
+        if (helperText && Array.isArray(helperText)) {
+            setHelperTextState(helperText);
+        }
+        if (helperText && typeof helperText === "string") {
+            setHelperTextState([helperText]);
+        }
+    }, [helperText]);
+
+    useEffect(() => {
+        setErrorTextState([]);
+        if (errorText && Array.isArray(errorText)) {
+            setErrorTextState(errorText);
+        }
+        if (errorText && typeof errorText === "string") {
+            setErrorTextState([errorText]);
+        }
+    }, [errorText]);
+
+    useEffect(() => {
+        setValidTextState([]);
+        if (validText && Array.isArray(validText)) {
+            setValidTextState(validText);
+        }
+        if (validText && typeof validText === "string") {
+            setValidTextState([validText]);
+        }
+    }, [validText]);
+
+    useEffect(() => {
+        setIsValidState(isValid);
+    }, [isValid]);
+
+    useEffect(() => {
+        setIsInvalidState(isInvalid);
+    }, [isInvalid]);
+
+    useEffect(() => {
+        if (registerProps === undefined) {
+            return
+        }
+        setRegisterPropsState(registerProps);
+        // const newRegisterProps = Object.keys(registerProps).map((object) => );
+
+        // const newRegisterProps = {};
+        // Object.keys(registerProps).map((object) => {
+        //     newRegisterProps[object] = registerProps[object];
+        // });
+        // setRegisterPropsState(newRegisterProps);
+    }, [registerProps]);
+
+    useEffect(() => {
+        setInputErrorsState(inputErrors);
+    }, [inputErrors]);
+
+    useEffect(() => {
+        setIsInvalidState(isInvalid);
+        if (inputErrors) {
+            setIsInvalidState(true);
+        }
+    }, [inputErrors, isInvalid]);
+
+    useEffect(() => {
+        if (registerPropsState === undefined) {
+            return;
+        }
+        if (required !== undefined) {
+            assignRegisterProps("required", required);
+        }
+        if (maxLength !== undefined) {
+            assignRegisterProps("maxLength", maxLength);
+        }
+        if (minLength !== undefined) {
+            assignRegisterProps("minLength", minLength);
+        }
+        if (max !== undefined) {
+            assignRegisterProps("max", max);
+        }
+        if (min !== undefined) {
+            assignRegisterProps("min", min);
+        }
+        if (pattern !== undefined) {
+            assignRegisterProps("pattern", pattern);
+        }
+        if (disabled !== undefined) {
+            assignRegisterProps("disabled", disabled);
+        }
+        if (onChange !== undefined) {
+            assignRegisterProps("onChange", onChange);
+        }
+        if (onBlur !== undefined) {
+            assignRegisterProps("onBlur", onBlur);
+        }
+        if (value !== undefined) {
+            assignRegisterProps("value", value);
+        }
+        if (isLoading !== undefined) {
+            assignRegisterProps("disabled", isLoading);
+            assignRegisterProps("isLoading", isLoading);
+        }
+    }, [registerProps, required, maxLength, minLength, max, min, pattern, disabled, onChange, onBlur, value, isLoading]);
+
+
+    const assignRegisterProps = (key, value) => {
+        if (value !== undefined) {
+            const nanii = {...registerPropsState};
+            nanii[key] = value;
+            if (name === "username") {
+                console.log('nanii', nanii)
+            }
+            setRegisterPropsState(nanii)
+        }
+    }
+
+
+    return <Form.Group className="mb-4"
+                       controlId={name}>
+        <Form.Label>
+            {title}
+            {registerPropsState?.required && <span className="form-label__mandatory">*</span>}
+            {registerPropsState?.isLoading && <FormSpinner/>}
+        </Form.Label>
+        <InputGroup
+            className={classNames(leftIcon && "left-icon", (rightIcon || rightAction) && (rightIcon ? "right-icon" : "right-action"))}>
+            {
+                leftIcon &&
+                <div className="icon-wrapper">
+                    {leftIcon}
+                </div>
+            }
+
+            <Form.Control
+                ref={ref}
+                type={type}
+                placeholder={placeholder}
+                style={{...rightActionPadding, ...validationBackgroundPosition, ...style}}
+                className={classNames(className, isValidState && "is-valid", isInvalidState && "is-invalid")}
+                {...props}
+                {...register(name, registerPropsState)}/>
+
+            {
+                (rightIcon || rightAction) &&
+                <div className="icon-wrapper"
+                     ref={rightActionRef}>
+                    {rightIcon || rightAction}
+                </div>
+            }
+        </InputGroup>
+
+
+        <AnimateHeight show={errorTextState.length > 0}
+                       triggerChange={errorTextState}>
+            <Form.Text className="invalid-feedback">
+                <>
+                    {errorTextState.length > 0 &&
+                        errorTextState.map((object, index) => {
+                            return <div key={index}>
+                                {object}
+                            </div>
+                        })
+                    }
+                </>
+            </Form.Text>
+        </AnimateHeight>
+
+        <AnimateHeight show={inputErrorsState?.message !== undefined}
+                       triggerChange={inputErrorsState?.message}>
+            <Form.Text className="invalid-feedback">
+                {inputErrorsState?.message}
+            </Form.Text>
+        </AnimateHeight>
+
+        <AnimateHeight show={validTextState.length > 0}
+                       triggerChange={validTextState}>
+            <Form.Text className="valid-feedback">
+                <>
+                    {validTextState.length > 0 &&
+                        validTextState.map((object, index) => {
+                            return <div key={index}>
+                                {object}
+                            </div>
+                        })
+                    }
+                </>
+            </Form.Text>
+        </AnimateHeight>
+
+        <AnimateHeight show={helperTextState.length > 0}
+                       triggerChange={helperTextState}>
+            <Form.Text>
+                <>
+                    {helperTextState.length > 0 &&
+                        helperTextState.map((object, index) => {
+                            return <div key={index}>
+                                {object}
+                            </div>
+                        })
+                    }
+                </>
+            </Form.Text>
+        </AnimateHeight>
+    </Form.Group>
+};
+
+
+// eslint-disable-next-line react/display-name
+const FormInputRHF = forwardRef((props, ref) => {
+
+    const {
+        register,
+        formState: {errors}
+    } = useFormContext();
+
+    return <FormSelect ref={ref}
+                        errors={errors}
+                        register={register} {...props}/>
+});
+
+
+FormSelect.RHF = FormInputRHF;
+export default FormSelect;

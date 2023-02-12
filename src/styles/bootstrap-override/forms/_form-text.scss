@@ -1,0 +1,16 @@
+.form-text {
+    display: block;
+    line-height: $form-text-line-height-;
+    min-height: $form-text-line-height-;
+    &:not(:first-child) {
+        margin-top: 0;
+    }
+}
+
+.form-text-wrapper {
+    margin-top: $form-text-margin-top;
+
+    .form-text {
+        margin-top: 0;
+    }
+}

@@ -1,0 +1,79 @@
+$icon-height: 24px;
+$form-control-in-right-icon-wrapper-padding-right: calc($icon-height + (($icon-height / 2) + 1px) + ($icon-height / 3));
+
+$validation-messages: "";
+@each $state in map-keys($form-validation-states) {
+    $validation-messages: $validation-messages + ":not(." + unquote($state) + "-tooltip)" + ":not(." + unquote($state) + "-feedback)";
+}
+
+
+%icon-wrapper {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    z-index: 3;
+    height: 100%;
+    min-width: 50px;
+    max-height: 50px;
+    align-items: center;
+    color: $text-secondary;
+
+    & > svg {
+        width: auto;
+        height: 24px;
+
+        &.small {
+            width: auto;
+            height: 16px;
+        }
+    }
+}
+
+.input-group {
+    &.left-icon {
+        .icon-wrapper {
+            @extend %icon-wrapper;
+            padding-left: calc(($icon-height / 2) + 1px);
+            padding-right: calc($icon-height / 3);
+
+            & + :not(:first-child):not(.dropdown-menu)#{$validation-messages} {
+                z-index: 1;
+                margin-left: 0;
+                padding-left: calc($icon-height + (($icon-height / 2) + 1px) + ($icon-height / 3));
+                @include border-start-radius($input-border-radius);
+            }
+        }
+    }
+
+    &.right-icon, &.right-action {
+        .icon-wrapper {
+            &:not(:first-child) {
+                @extend %icon-wrapper;
+                padding-left: calc($icon-height / 3);
+                padding-right: calc(($icon-height / 2) + 1px);
+                right: 0;
+            }
+
+            &--btn {
+                cursor: pointer;
+            }
+        }
+
+        %form-control-in-right-icon-wrapper {
+            z-index: 1 !important;
+            padding-right: $form-control-in-right-icon-wrapper-padding-right;
+        }
+
+        .form-control, .form-select {
+            border-top-right-radius: $input-border-radius !important;
+            border-bottom-right-radius: $input-border-radius !important;
+            @extend %form-control-in-right-icon-wrapper;
+
+
+            &.is-valid, &.is-invalid {
+                background-position: right 46px center;
+                padding-right: calc($form-control-in-right-icon-wrapper-padding-right + 34px - 12px);
+            }
+        }
+    }
+}

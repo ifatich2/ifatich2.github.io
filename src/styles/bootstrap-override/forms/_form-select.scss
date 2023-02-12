@@ -1,0 +1,18 @@
+.form-select {
+    caret-color: $input-caret-color;
+    line-height: $input-line-height-;
+
+    &:hover:not(:disabled):not([readonly]):not(:focus):not(.is-invalid):not(.is-valid) {
+        border: 1px solid $input-hover-border-color;
+    }
+
+    &:focus, &.is-invalid:focus, &.is-valid:focus {
+        box-shadow: none;
+    }
+
+
+    &.is-valid, &.is-invalid {
+        background-size: 18px 18px;
+        padding-right: 34px;
+    }
+}

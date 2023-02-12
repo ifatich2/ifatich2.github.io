@@ -1,0 +1,22 @@
+.table {
+    > :not(caption)>*>* {
+        padding: .75rem;
+    }
+
+    >thead {
+        background-color: $lime-50;
+        tr th {
+            padding: 1rem;
+            font-size: var(--g-kit-font-size-sigma);
+            line-height: var(--g-kit-line-height-sigma);
+            font-weight: var(--g-kit-font-weight-bold);
+        }
+    }
+}
+
+.table-striped {
+    >tbody>tr:nth-of-type(#{$table-striped-order})>* {
+        --#{$prefix}table-accent-bg: var(--g-kit-black-10);
+        color: var(--#{$prefix}table-striped-color);
+    }
+}

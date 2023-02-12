@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/static/css/main.5018b978.css",
+    "main.js": "/static/js/main.3d5dcc1b.js",
+    "static/js/787.b720fec5.chunk.js": "/static/js/787.b720fec5.chunk.js",
+    "static/media/bgSyariah.svg": "/static/media/bgSyariah.43bcbb7817b5706071a613c1b3d3481a.svg",
+    "static/media/logo-pegadaian-syariah.png": "/static/media/logo-pegadaian-syariah.09c1d12b0fb3e7fb9288.png",
+    "static/media/Vector.svg": "/static/media/Vector.c0402afdaab651c03855.svg",
+    "static/media/Vector2.svg": "/static/media/Vector2.9999356070a162522587.svg",
+    "index.html": "/index.html",
+    "static/media/Active.webp": "/static/media/Active.5ee10c94b5805216b77a.webp",
+    "main.5018b978.css.map": "/static/css/main.5018b978.css.map",
+    "main.3d5dcc1b.js.map": "/static/js/main.3d5dcc1b.js.map",
+    "787.b720fec5.chunk.js.map": "/static/js/787.b720fec5.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.5018b978.css",
+    "static/js/main.3d5dcc1b.js"
+  ]
+}

@@ -1,0 +1,25 @@
+@use "sass:map";
+
+/* YPH FONT SYSTEM */
+/* HOW TO USE */
+/* 1.   Call the class: className="typography-{$typography-sizes}-{$typography-weights}-{$typography-styles}" */
+/*      Example: className="typography-alpha-regular-normal" */
+/* 2.   @extend inside .scss: @extend %typography-{$typography-sizes}-{$typography-weights}-{$typography-styles} */
+/*      Example: @extend %typography-alpha-regular-normal; */
+/* Possible combinations can be found in 'src/styles/g-kit/_typography.scss' */
+
+@each $typography-size-name, $typography-size-value in $typography-sizes {
+    @each $typography-weight-name, $typography-weight-value in $typography-weights {
+        @each $typography-style-name, $typography-style-value in $typography-styles {
+            %typography-#{$typography-size-name}-#{$typography-weight-name}-#{$typography-style-name} {
+                font-style: var(--g-kit-font-style-#{$typography-style-name});
+                font-weight: var(--g-kit-font-weight-#{$typography-weight-name});
+                font-size: var(--g-kit-font-size-#{$typography-size-name});
+                line-height: var(--g-kit-line-height-#{$typography-size-name});
+            }
+            .typography-#{$typography-size-name}-#{$typography-weight-name}-#{$typography-style-name} {
+                @extend %typography-#{$typography-size-name}-#{$typography-weight-name}-#{$typography-style-name}
+            }
+        }
+    }
+}
