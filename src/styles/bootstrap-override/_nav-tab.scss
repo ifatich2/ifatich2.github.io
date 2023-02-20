@@ -1,6 +1,6 @@
 .nav-tabs {
   // scss-docs-start nav-tabs-css-vars
-  --border-color-tab: var(--g-kit-black-50);
+  --border-color-tab: var(--g-kit-black-20);
   --g-bs-nav-tabs-border-width: unset;
   --g-bs-nav-tabs-border-color: unset;
   --g-bs-nav-tabs-border-radius: unset;
@@ -11,22 +11,20 @@
   // scss-docs-end nav-tabs-css-vars
 
   color: $black-50;
-  border-bottom: 2px solid var(--border-color-tab);
+  border-bottom: 1px solid var(--border-color-tab);
 
   .nav-link {
-    margin-bottom: -2px; // stylelint-disable-line function-disallowed-list
+    margin-bottom: -1px; // stylelint-disable-line function-disallowed-list
     background: none;
     border-bottom: unset;
     color: $black-50;
-    font-weight: 600;
+    font-weight: bold;
     @include border-top-radius(var(--#{$prefix}nav-tabs-border-radius));
 
-    &:hover,
-    &:focus {
+    &:hover, &:focus {
       // Prevents active .nav-link tab overlapping focus outline of previous/next .nav-link
       isolation: isolate;
-      border-bottom: 2px solid var(--border-color-tab);
-      border-color: var(--#{$prefix}nav-tabs-link-hover-border-color);
+      color: $lime-50;
     }
 
     &.disabled,
@@ -48,7 +46,7 @@
 
   .dropdown-menu {
     // Make dropdown border overlap tab border
-    margin-top: -2px; // stylelint-disable-line function-disallowed-list
+    margin-top: -1px; // stylelint-disable-line function-disallowed-list
     // Remove the top rounded corners here since there is a hard edge above the menu
     border-bottom: 2px solid var(--border-color-tab);
     @include border-top-radius(0);

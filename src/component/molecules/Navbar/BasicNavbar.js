@@ -1,5 +1,5 @@
 import { Image, Navbar, Container } from 'react-bootstrap';
-import logoPegadaianSyariah from "../../../image/logo-pegadaian-syariah.png"
+import logoPegadaianSyariah from "../../../assets/image/logo-pegadaian-syariah.png"
 import BasicNav from "../Navs/BasicNavs/BasicNav";
 
 function BasicNavbar() {

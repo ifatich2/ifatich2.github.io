@@ -2,5 +2,6 @@
     line-height: $form-label-line-height-;
     &__mandatory {
         margin-left: .25rem;
+        display: none;
     }
 }

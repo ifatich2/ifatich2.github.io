@@ -1,13 +1,13 @@
 import "bootstrap";
-import 'bootstrap/dist/css/bootstrap.css';
+// import 'bootstrap/dist/css/bootstrap.css';
 import './styles/g-kit.scss';
 
 import { useForm } from 'react-hook-form';
 import { useEffect, useState, useMemo } from 'react';
 
-import { Row, Col, Card, Container } from "react-bootstrap";
+import { Row, Col, Card, Container, Stack } from "react-bootstrap";
 import { Form as BsForm } from 'react-bootstrap';
-import { Envelope, InfoCircle, Person, Telephone } from 'react-bootstrap-icons';
+import { Envelope, Person, Telephone } from 'react-bootstrap-icons';
 
 import Alerts from "./component/molecules/Alert/alert";
 import AlertVarian from "./component/molecules/Alert/alertVarian";
@@ -49,6 +49,12 @@ import AcaraVarian from "./component/molecules/Card/AcaraVarian/AcaraVarian";
 import VoucherVarian from "./component/molecules/Card/VoucherVarian/VoucherVarian";
 import CorporateVarian from "./component/molecules/Navbar/CorporateVarian/CorporateVarian";
 import PegadianVarian from "./component/molecules/Navbar/PegadaianVarian/PegadaianVarian";
+import ToastBasic from "./component/molecules/Toast/ToastBasic";
+import DropdownVarian from "./component/molecules/Dropdown/DropdownVarian/DropdownVarian";
+import BasicVarian from "./component/molecules/Dropdown/InfoVarian/BasicVarian";
+import NoImageVarian from "./component/molecules/Dropdown/InfoVarian/NoImageVarian";
+import ListVarian from "./component/molecules/Dropdown/InfoVarian/ListVarian";
+import TableVarian from "./component/molecules/Dropdown/InfoVarian/TableVarian";
 
 
 
@@ -60,7 +66,7 @@ function App() {
   });
 
   const {
-    register, getValues, reset, setValue,
+    register, reset, setValue,
     formState: {
     isSubmitting,  isDirty , errors
   }
@@ -199,7 +205,7 @@ function App() {
                           <FormText content="Option helper" />
                       </FormItemContainer>
                       <FormItem name="username" title="Username" placeholder="Placeholder Username" leftIcon={<Person />} registerProps={{ required: 'Username is required'  }} />
-                      <FormItem name="email" title="Email" placeholder="Placeholder Email" leftIcon={<Envelope />} helperText={['Example: gmail@yohan.com']}
+                      <FormItem name="email" title="Email" placeholder="Placeholder Email" leftIcon={<Envelope />}
                                 registerProps={{
                                   required: 'Email is required',
                                   pattern: {
@@ -208,18 +214,28 @@ function App() {
                                   }
                                 }} 
                       />
-                      <FormItem type="tel" name="phone" title="Phone" placeholder="Phone text" leftIcon={<Telephone />} rightIcon={<InfoCircle className="small" title="Phone number contains at least 10 characters" />}
-                                registerProps={{ required: 'Phone is required', pattern: { value: /[0-9]/,  message: 'Phone is not valid',
-                                  }, minLength: {
-                                      value: 10,
-                                      message: 'Min length is 10',
-                                  }, onChange: (event) => {
-                                      const newValue = event.target.value.replace(/\D/, '');
-                                      setValue('phone', newValue);
-                                  } 
-                                }} 
+                      <FormItem type="tel" name="phone" title="Phone" placeholder="Phone text" leftIcon={<Telephone />}
+                        registerProps={{
+                          required: 'Phone is required',
+                          pattern: {
+                            value: /[0-9]/,
+                            message: 'Phone is not valid',
+                          },
+                          minLength: {
+                            value: 10,
+                            message: 'Min length is 10',
+                          },
+                          onChange: (event) => {
+                            const phoneInput = event.target;
+                            let inputValue = phoneInput.value;
+                            inputValue = inputValue.replace(/\s/g, ""); // menghapus spasi dari inputan
+                            inputValue = inputValue.match(/.{1,4}/g).join(" "); // menambahkan spasi setiap 4 karakter
+                            inputValue = inputValue.substring(0, 14); // membatasi jumlah karakter maksimal menjadi 16
+                            setValue('phone', inputValue);
+                          },
+                        }}
                       />
-                      <FormItem name="name"  title="Name"  placeholder="Name text" leftIcon={<Person />} rightAction={<a href="#!" onClick={() => setValue('name', 'Mr. ' + getValues('name'), {shouldDirty: true})}>Action</a>} registerProps={{required: 'Name is required'}} />
+                      <FormItem name="name"  title="Name"  placeholder="Name text" leftIcon={<Person />} registerProps={{required: 'Name is required'}} />
                       <FormItem name="description"  title="Description" placeholder="Description text"  as="textarea"  leftIcon={<Person />} registerProps={{required: 'Description is required'}} />
                       <FormItem type="password" name="password" title="Password" placeholder="Placeholder Password" registerProps={{ required: 'Password is required' }} />
                   </Col>
@@ -376,7 +392,7 @@ function App() {
               <h5>Basic Counter</h5>
             </Card.Header>
             <Card.Body>
-              <BasicCounter />
+              <BasicCounter minimalCount={1} />
             </Card.Body>
           </Card>
         </Col>
@@ -468,7 +484,12 @@ function App() {
               <h5>Table</h5>
             </Card.Header>
             <Card.Body>
-              <BasicTable />
+              <BasicTable bodyData = {[
+                          {id: 1, firstName: 'asdasda', lastName: 'Otto', username: '@mdo'},
+                          {id: 2, firstName: 'Jacob', lastName: 'Thornton', username: '@fat'},
+                          {id: 3, firstName: 'Larry', lastName: 'the Bird', username: '@twitter'}
+                        ]}
+              />
             </Card.Body>
           </Card>
         </Col>
@@ -660,10 +681,11 @@ function App() {
         <Col className='mb-3' lg={6} md={6} xs={12}>
           <Card>
             <Card.Header>
-              <h5>Null</h5>
+              <h5>Toast Basic</h5>
             </Card.Header>
             <Card.Body>
-              asdasdjalskj
+              <ToastBasic className="mb-0" variant="info" buttonValue="Toast Basic"> Lorem ipsum dolor sit amet, consectetur adipiscing.Lorem ipsum dolor sit amet, consectetur adipiscing.Lorem ipsum dolor sit amet </ToastBasic>
+              <DropdownVarian variant="danger" autoCloseTimeout={3000}>lorem</DropdownVarian>
             </Card.Body>
           </Card>
         </Col>
@@ -671,10 +693,81 @@ function App() {
         <Col className='mb-3' lg={6} md={6} xs={12}>
           <Card>
             <Card.Header>
-              <h5>Null</h5>
+              <h5>Modal Varian (( Bottomsheet ))</h5>
             </Card.Header>
             <Card.Body>
-              asdasdjalskj
+              <Stack gap={2}>
+                <BasicVarian  borderType={"border-0 pb-0"} 
+                              image="images/banner.png" 
+                              buttonValue="One Button Varian" 
+                              subTitle="Judul Subtitle" 
+                              descValue="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla convallis fringilla gravida." 
+                              display={"d-none"} //How to hide button
+                              buttonValue2={"Button Secondary"} 
+                              buttonValue3={"Button Success"} 
+                />
+
+                <BasicVarian  borderType={"border-0 pb-0"} 
+                              image="images/banner.png" 
+                              buttonValue="Two Button Varian" 
+                              subTitle="Judul Subtitle" 
+                              descValue="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla convallis fringilla gravida." 
+                              buttonValue2={"Button Secondary"} 
+                              buttonValue3={"Button Success"} 
+                />
+
+                <h6 className="mt-3">No Image Varian</h6>
+
+                <NoImageVarian  titleValue={"Title"}
+                                buttonValue="One Button Varian" 
+                                descValue="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla convallis fringilla gravida." 
+                                display={"d-none"} //How to hide button
+                                buttonValue2={"Button Secondary"} 
+                                buttonValue3={"Button Success"} 
+                />
+
+                <NoImageVarian  titleValue={"Title"}
+                                buttonValue="Two Button Varian" 
+                                descValue="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla convallis fringilla gravida." 
+                                buttonValue2={"Button Secondary"} 
+                                buttonValue3={"Button Success"} 
+                />
+
+                <h6 className="mt-3">List Varian</h6>
+
+                <ListVarian titleValue={"List Varian Dropdown"}
+                            buttonValue="One Button Varian" 
+                            itemList={[
+                              { itemList: "Kode promo RENCANAEMAS digunakan untuk transaksi buka Tabungan Emas." },
+                              { itemList: "Diskon sebesar 40%, maksimal Rp20.000." },
+                              { itemList: "Minimal transaksi Rp50.000,-" },
+                              { itemList: "Kode promo bisa digunakan pada Outlet Pegadaian, aplikasi Pegadaian Digital, dan aplikasi Pegadaian Syariah Digital." },
+                              { itemList: "Masa aktif kode promo berakhir pada 30 April 2021." }
+                            ]}
+                            descValue="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla convallis fringilla gravida." 
+                            display={"d-none"} //How to hide button
+                            buttonValue2={"Button Secondary"} 
+                            buttonValue3={"Button Success"} 
+                
+                />
+
+                <h6 className="mt-3">Table Varian</h6>
+
+                <TableVarian
+                              titleValue={"Table Varian Dropdown"}
+                              buttonValue="One Button Varian" 
+                              bodyData={[
+                                { firstName: "John", lastName: "Doe", username: "johndoe" },
+                                { firstName: "Jane", lastName: "Doe", username: "janedoe" },
+                                { firstName: "Bob", lastName: "Smith", username: "bobsmith" }
+                              ]}
+                              descValue="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla convallis fringilla gravida." 
+                              display={"d-none"} //How to hide button
+                              buttonValue2={"Button Secondary"} 
+                              buttonValue3={"Button Success"} 
+                />
+                 
+              </Stack>
             </Card.Body>
           </Card>
         </Col>

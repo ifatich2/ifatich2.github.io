@@ -1,5 +1,9 @@
 .progress {
     --g-bs-progress-height: 10px;
+
+    .progress-bar {
+        border-radius: 5px;
+    }
 }
 
 

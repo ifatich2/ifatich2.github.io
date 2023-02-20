@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import ProgressBar from 'react-bootstrap/ProgressBar';
 import Stack from 'react-bootstrap/Stack';
-import iconSpan from "../../../../../image/icon-webp/Active.webp"
+import iconSpan from "../../../../../assets/image/icon-webp/Active.webp"
 import { Image } from "react-bootstrap";
 
 export const VariantProgress = ({ title, saldo, peringkat, btnLink, buttonValue, ...props}) => {

@@ -21,7 +21,7 @@ TabNav.defaultProps = {
     { title: 'Produk', href: "#", eventKey: "#" },
     { title: 'Promo', href: "#", eventKey: "link-1" },
     { title: 'Artikel', href: "#", eventKey: "link-2" },
-    { title: 'Acara', href: "#", eventKey: "disabled", disabled: true }
+    { title: 'Acara', href: "#", eventKey: "disabled" }
   ]
 }
 

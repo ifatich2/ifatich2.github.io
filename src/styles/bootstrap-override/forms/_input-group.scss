@@ -77,3 +77,11 @@ $validation-messages: "";
         }
     }
 }
+
+input:-internal-autofill-selected {
+    appearance: menulist-button;
+    background-image: none !important;
+    background-color: #fff !important;
+    color: fieldtext !important;
+    border: 1px solid #eeeeef;
+}

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Container from 'react-bootstrap/Container';
 import Navbar from 'react-bootstrap/Navbar';
 import { Image, Nav, NavDropdown, Row, Col } from 'react-bootstrap';
-import logoPegadaianSyariah from "../../../../image/logo-pegadaian-syariah.png"
+import logoPegadaianSyariah from "../../../../assets/image/logo-pegadaian-syariah.png"
 
 function CorporateVarian({foo}) {
     const [dropdown1Open, setDropdown1Open] = useState(false);

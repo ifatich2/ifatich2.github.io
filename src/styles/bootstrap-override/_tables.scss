@@ -1,4 +1,8 @@
 .table {
+    border-radius: 6px;
+    margin-bottom: 0;
+    overflow: hidden;
+    
     > :not(caption)>*>* {
         padding: .75rem;
     }
@@ -9,14 +13,71 @@
             padding: 1rem;
             font-size: var(--g-kit-font-size-sigma);
             line-height: var(--g-kit-line-height-sigma);
-            font-weight: var(--g-kit-font-weight-bold);
+            font-weight: var(--g-kit-font-weight-regular);
+
+            color: $text-white;
         }
+    }
+
+    tbody {
+        color: $black-80;
+
+        td {
+            padding: .75rem;
+            font-size: var(--g-kit-font-size-sigma);
+            line-height: var(--g-kit-line-height-sigma);
+            font-weight: var(--g-kit-font-weight-regular);
+
+        }
+    }
+
+    &.rounded-corners {
+        border-spacing: 0;
+        border-collapse: separate;
+        border-radius: 10px;
+        border: 1px solid $black-20;
     }
 }
 
 .table-striped {
-    >tbody>tr:nth-of-type(#{$table-striped-order})>* {
-        --#{$prefix}table-accent-bg: var(--g-kit-black-10);
-        color: var(--#{$prefix}table-striped-color);
+    > tbody > tr {
+        &:nth-of-type(#{$table-striped-order}) > * {
+            --#{$prefix}table-accent-bg: var(--g-kit-black-10);
+            color: $black-80;
+        }
+        &:hover {
+            background-color: $black-10;
+        }
     }
+}
+
+.table-hover > tbody > tr:hover > * {
+    --g-bs-table-accent-bg: var(--g-kit-black-20);
+    color: var(--g-bs-table-hover-color);
+}
+  
+
+.table-bordered > :not(caption) > * > * {
+    border-width: 0 0;
+}
+
+/* Apply a border to the right of all but the last column */
+// table.rounded-corners th:not(:last-child),
+// table.rounded-corners td:not(:last-child) {
+//     border-right: 1px solid black;
+// }
+
+/* Apply a border to the bottom of all but the last row */
+table.rounded-corners>thead>tr:not(:last-child)>th,
+table.rounded-corners>thead>tr:not(:last-child)>td,
+table.rounded-corners>tbody>tr:not(:last-child)>th,
+table.rounded-corners>tbody>tr:not(:last-child)>td,
+table.rounded-corners>tfoot>tr:not(:last-child)>th,
+table.rounded-corners>tfoot>tr:not(:last-child)>td,
+table.rounded-corners>tr:not(:last-child)>td,
+table.rounded-corners>tr:not(:last-child)>th,
+table.rounded-corners>thead:not(:last-child),
+table.rounded-corners>tbody:not(:last-child),
+table.rounded-corners>tfoot:not(:last-child) {
+    border-bottom: 1px solid $black-20;
 }

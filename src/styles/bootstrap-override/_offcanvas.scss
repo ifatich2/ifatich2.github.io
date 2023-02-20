@@ -19,6 +19,7 @@
         color: $text-secondary;
         margin-bottom: 0;
     }
+
 }
 
 .offcanvas-header {
@@ -28,4 +29,24 @@
 .offcanvas-title {
     font-size: 1.125rem;
     line-height: 1.625rem;
+}
+
+.noImage {
+    .description-offcanvas {
+        font-size: var(--g-kit-font-size-sigma);
+        line-height: var(--g-kit-line-height-sigma);
+        font-weight: var(--g-kit-font-weight-sigma);
+        color: $text-secondary;
+        margin-bottom: 0;
+    }
+}
+
+.listVarian {
+    li {
+        font-size: var(--g-kit-font-size-sigma);
+        line-height: var(--g-kit-line-height-sigma);
+        font-weight: var(--g-kit-font-weight-sigma);
+        color: $text-primary;
+        margin-bottom: 0;
+    }
 }

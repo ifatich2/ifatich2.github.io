@@ -5,7 +5,7 @@ import Image from "../../image/image";
 export const FolderVarian = ({ title, cardImage, body, icon, descIcon, buttonValue, ...props}) => {
   return (
     <div className="card mb-2 w-360 card-article">
-        <Image className="top" src={cardImage} alt="Logo" />
+        <Image className="top w-100" src={cardImage} alt="Logo" />
         <div className="card-body">
             <p className="card-text-2"> 
                 <span>
