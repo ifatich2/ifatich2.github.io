@@ -1,20 +1,24 @@
 {
   "files": {
-    "main.css": "/static/css/main.5018b978.css",
-    "main.js": "/static/js/main.3d5dcc1b.js",
+    "main.css": "/static/css/main.dba30a57.css",
+    "main.js": "/static/js/main.163e5c03.js",
     "static/js/787.b720fec5.chunk.js": "/static/js/787.b720fec5.chunk.js",
     "static/media/bgSyariah.svg": "/static/media/bgSyariah.43bcbb7817b5706071a613c1b3d3481a.svg",
+    "static/media/NunitoSans-ExtraBold.ttf": "/static/media/NunitoSans-ExtraBold.52a99d58a36f2b7a78b3.ttf",
+    "static/media/NunitoSans-Regular.ttf": "/static/media/NunitoSans-Regular.87d9266583abd389ca1f.ttf",
+    "static/media/NunitoSans-SemiBold.ttf": "/static/media/NunitoSans-SemiBold.662b866576cfea51dd64.ttf",
+    "static/media/NunitoSans-Light.ttf": "/static/media/NunitoSans-Light.7f9eed4cca4d0ae6a772.ttf",
     "static/media/logo-pegadaian-syariah.png": "/static/media/logo-pegadaian-syariah.09c1d12b0fb3e7fb9288.png",
     "static/media/Vector.svg": "/static/media/Vector.c0402afdaab651c03855.svg",
     "static/media/Vector2.svg": "/static/media/Vector2.9999356070a162522587.svg",
     "index.html": "/index.html",
     "static/media/Active.webp": "/static/media/Active.5ee10c94b5805216b77a.webp",
-    "main.5018b978.css.map": "/static/css/main.5018b978.css.map",
-    "main.3d5dcc1b.js.map": "/static/js/main.3d5dcc1b.js.map",
+    "main.dba30a57.css.map": "/static/css/main.dba30a57.css.map",
+    "main.163e5c03.js.map": "/static/js/main.163e5c03.js.map",
     "787.b720fec5.chunk.js.map": "/static/js/787.b720fec5.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.5018b978.css",
-    "static/js/main.3d5dcc1b.js"
+    "static/css/main.dba30a57.css",
+    "static/js/main.163e5c03.js"
   ]
 }
