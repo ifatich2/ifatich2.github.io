@@ -55,6 +55,11 @@ import BasicVarian from "./component/molecules/Dropdown/InfoVarian/BasicVarian";
 import NoImageVarian from "./component/molecules/Dropdown/InfoVarian/NoImageVarian";
 import ListVarian from "./component/molecules/Dropdown/InfoVarian/ListVarian";
 import TableVarian from "./component/molecules/Dropdown/InfoVarian/TableVarian";
+import PaymentVarian from "./component/molecules/ListGroup/PaymentVarian/PaymentVarian";
+import AccordionVarian from "./component/molecules/ListGroup/PaymentVarian/AccordionVarian";
+import GCashVarian from "./component/molecules/ListGroup/GCashVarian/GCashVarian";
+import BankVarian from "./component/molecules/ListGroup/BankVarian/BankVarian";
+import TeVarian from "./component/molecules/ListGroup/TabunganEmasVarian/TabuanganEmasVarian";
 
 
 
@@ -775,6 +780,219 @@ function App() {
         <Col className='mb-3' lg={6} md={6} xs={12}>
           <Card>
             <Card.Header>
+              <h5>Payment Varian</h5>
+            </Card.Header>
+            <Card.Body>
+              
+              <PaymentVarian
+                icon={'images/logo-bank-bri.png'}
+                value={"BRI Virtual Account"}
+                selected={true}
+              />
+
+              <PaymentVarian
+                icon={'images/logo-bank-bri.png'}
+                value={"BRI Virtual Account"}
+                eror={"Maintance"}
+              />
+
+              <PaymentVarian
+                icon={'images/logo-bank-bni.png'}
+                value={"BNI Virtual Account"}
+                saldo={"70.000"}
+              />
+
+              <PaymentVarian
+                className="not-enought"
+                variant={"secondary"}
+                icon={'images/logo-gcash-bni.png'}
+                value={"BRI Virtual Account"}
+                saldo={"70.000"}
+                eror={"Saldo tidak cukup"}
+                buttonValue={"Isi Saldo"}
+              />
+
+              <PaymentVarian
+                icon={'images/logo-indosat.png'}
+                value={"0821 0987 8762"}
+                variant={"tertiary"}
+                buttonValue={"Pilih"}
+              />
+
+              <PaymentVarian
+                icon={'images/logo-indosat.png'}
+                bank={"BRI Virtual Account"}
+                value={"8177 4488 5288 9595 95"}
+                variant={"tertiary"}
+                buttonValue={"Salin"}
+              />
+
+            </Card.Body>
+          </Card>
+        </Col>
+
+        <Col className='mb-3' lg={6} md={6} xs={12}>
+          <Card>
+            <Card.Header>
+              <h5>Accordion Payment Varian</h5>
+            </Card.Header>
+            <Card.Body>
+              <AccordionVarian
+                title="Pilih Varian Pembayaran"
+                imgSpoiler={'images/logo-bank-bri.png'}
+                varianData={[ 
+                  { icon: 'images/logo-bank-bri.png', value : "BRI Virtual Account", selected: false },
+                  { icon: 'images/logo-bank-bri.png', value : "BRI Virtual Account", selected: false },
+                  { icon: 'images/logo-bank-bri.png', value : "BRI Virtual Account", selected: false },
+                  { icon: 'images/logo-bank-bri.png', value : "BRI Virtual Account", selected: false },
+                ]}
+              />
+
+              <AccordionVarian
+                className={"mt-1"}
+                title="Pilih Varian Pembayaran"
+                imgSpoiler={'images/logo-bank-bri.png'}
+                spoiler={"d-none"} //gunakan ketika tidak menggunakan spoiler
+                varianData={[ 
+                  { icon: 'images/logo-bank-bri.png', value : "BRI Virtual Account", selected: false },
+                  { icon: 'images/logo-bank-bri.png', value : "BRI Virtual Account", selected: false },
+                  { icon: 'images/logo-bank-bri.png', value : "BRI Virtual Account", selected: false },
+                  { icon: 'images/logo-bank-bri.png', value : "BRI Virtual Account", selected: false },
+                ]}
+              />
+            </Card.Body>
+          </Card>
+        </Col>
+
+        <Col className='mb-3' lg={6} md={6} xs={12}>
+          <Card>
+            <Card.Header>
+              <h5>G Cash Varian</h5>
+            </Card.Header>
+            <Card.Body>
+              <GCashVarian 
+                icon={'images/logo-bank-bri.png'}
+                value={"G Cash BRI"}
+                imgEndVisible={"none"}
+                saldo={"70.000"}
+                iconEnd={'icons/time_regular.svg'}
+              />
+
+              <GCashVarian 
+                className={"mt-3"}
+                icon={'images/logo-bank-bri.png'}
+                value={"G Cash BRI"}
+                saldoVisible={"none"}
+                iconEnd={'icons/time_regular.svg'}
+              />
+
+              <GCashVarian 
+                className={"mt-3 small"} //small digunakan untuk ukuran small
+                icon={'images/logo-bank-bri.png'}
+                value={"G Cash BRI"}
+                saldoVisible={"none"}
+                iconEnd={'icons/time_regular.svg'}
+              />
+
+              <GCashVarian 
+                className={"mt-3 listItem"} //listItem digunakan untuk menjadi komponen list
+                icon={'images/logo-bank-bri.png'}
+                value={"G Cash BRI"}
+                saldoVisible={"none"}
+                iconEnd={'icons/time_regular.svg'}
+              />
+            </Card.Body>
+          </Card>
+        </Col>
+
+        <Col className='mb-3' lg={6} md={6} xs={12}>
+          <Card>
+            <Card.Header>
+              <h5>Bank Varian</h5>
+            </Card.Header>
+            <Card.Body>
+              <BankVarian 
+                icon={'images/logo-bank-bri.png'}
+                value={"G Cash BRI"}
+                subValue={"Adm Cost / Account Number"}
+                variant={"tertiary"}
+                buttonValue={"icons/time_regular.svg"}
+              />
+
+              <BankVarian 
+                className={"mt-3 listItem"} //listItem digunakan untuk menjadi komponen list
+                icon={'images/logo-bank-bri.png'}
+                value={"G Cash BRI"}
+                subValue={"Adm Cost / Account Number"}
+                variant={"tertiary"}
+                buttonValue={"icons/time_regular.svg"}
+              />
+            </Card.Body>
+          </Card>
+        </Col>
+
+        <Col className='mb-3' lg={6} md={6} xs={12}>
+          <Card>
+            <Card.Header>
+              <h5>Tabungan Emas Varian</h5>
+            </Card.Header>
+            <Card.Body>
+              <TeVarian 
+                icon={'images/logo-bank-bri.png'}
+                value={"1.231,2399"}
+                subValue={"0821876592828"}
+                variant={"tertiary"}
+                buttonValue={"icons/time_regular.svg"}
+              />
+
+              <TeVarian 
+                className="listItem mt-3"
+                icon={'images/logo-bank-bri.png'}
+                value={"1.231,2399"}
+                subValue={"0821876592828"}
+                variant={"tertiary"}
+                buttonValue={"icons/time_regular.svg"}
+              />
+            </Card.Body>
+          </Card>
+        </Col>
+
+        <Col className='mb-3' lg={6} md={6} xs={12}>
+          <Card>
+            <Card.Header>
+              <h5>Null</h5>
+            </Card.Header>
+            <Card.Body>
+              asdasdjalskj
+            </Card.Body>
+          </Card>
+        </Col>
+
+        <Col className='mb-3' lg={6} md={6} xs={12}>
+          <Card>
+            <Card.Header>
+              <h5>Null</h5>
+            </Card.Header>
+            <Card.Body>
+              asdasdjalskj
+            </Card.Body>
+          </Card>
+        </Col>
+
+        <Col className='mb-3' lg={6} md={6} xs={12}>
+          <Card>
+            <Card.Header>
+              <h5>Null</h5>
+            </Card.Header>
+            <Card.Body>
+              asdasdjalskj
+            </Card.Body>
+          </Card>
+        </Col>
+
+        <Col className='mb-3' lg={6} md={6} xs={12}>
+          <Card>
+            <Card.Header>
               <h5>Null</h5>
             </Card.Header>
             <Card.Body>
@@ -827,6 +1045,27 @@ function App() {
           </Card>
         </Col>
 
+        <Col className='mb-3' lg={6} md={6} xs={12}>
+          <Card>
+            <Card.Header>
+              <h5>Null</h5>
+            </Card.Header>
+            <Card.Body>
+              asdasdjalskj
+            </Card.Body>
+          </Card>
+        </Col>
+
+        <Col className='mb-3' lg={6} md={6} xs={12}>
+          <Card>
+            <Card.Header>
+              <h5>Null</h5>
+            </Card.Header>
+            <Card.Body>
+              asdasdjalskj
+            </Card.Body>
+          </Card>
+        </Col>
       </Row>
     </Container>
   );

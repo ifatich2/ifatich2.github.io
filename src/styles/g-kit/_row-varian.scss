@@ -1,0 +1,166 @@
+.PaymentVarian {
+    margin-top: -1px;
+    padding: 1rem;
+    border-top: 1px solid $black-20;
+    border-bottom: 1px solid $black-20;
+
+    button {
+        &.btn-tertiary{
+            background-color: transparent;
+            border: none;
+        }
+    }
+
+    &.not-enought {
+        img {
+            opacity: .5;
+        }
+        p {
+            color: $black-50;
+        }
+        p.saldo {
+            color: $black-50;
+        }
+    }
+
+    &.active {
+        background-color: $lime-10;
+    }
+
+    img {
+        object-fit: scale-down;
+    }
+
+    p {
+        margin-left: 12px;
+        margin-bottom: 0px;
+
+        font-size: var(--g-kit-font-size-omicron);
+        line-height: var(--g-kit-line-height-omicron);
+        font-weight: var(--g-kit-font-weight-regular);
+    }
+
+    p.eror{
+        color: $red;
+        margin-top: 2px;
+        margin-bottom: 0px;
+
+        font-size: var(--g-kit-font-size-omega);
+        line-height: var(--g-kit-line-height-omega);
+        font-weight: var(--g-kit-font-weight-regular);
+    }
+
+    p.saldo{
+        color: $black-60;
+        margin-top: 2px;
+        margin-bottom: 0px;
+
+        font-size: var(--g-kit-font-size-sigma);
+        line-height: var(--g-kit-line-height-sigma);
+        font-weight: var(--g-kit-font-weight-regular);
+    }
+
+    p.bank-name{
+        color: $black-60;
+        margin-top: 2px;
+        margin-bottom: 0px;
+
+        font-size: var(--g-kit-font-size-sigma);
+        line-height: var(--g-kit-line-height-sigma);
+        font-weight: var(--g-kit-font-weight-regular);
+    }
+}
+
+.gCashVarian {
+    margin-top: -1px;
+    padding: .75rem;
+    border: 1px solid $black-20;
+    border-radius: 6px;
+
+    &.small {
+        padding: 6px 12px;
+    }
+
+    &.listItem {
+        border-left: 0px;
+        border-right: 0px;
+        border-radius: 0px;
+        background-color: transparent;
+    }
+
+    button {
+        &.btn-tertiary{
+            background-color: transparent;
+            border: none;
+        }
+    }
+
+    img {
+        object-fit: scale-down;
+    }
+
+    p {
+        margin-left: 12px;
+        margin-bottom: 0px;
+
+        font-size: var(--g-kit-font-size-omicron);
+        line-height: var(--g-kit-line-height-omicron);
+        font-weight: var(--g-kit-font-weight-regular);
+    }
+
+    p.saldo{
+        color: $black-80;
+        margin-top: 2px;
+        margin-bottom: 0px;
+
+        font-size: var(--g-kit-font-size-omicron);
+        line-height: var(--g-kit-line-height-omicron);
+        font-weight: var(--g-kit-font-weight-bold);
+    }
+
+}
+
+.bankVarian {
+    margin-top: -1px;
+    padding: .75rem;
+    border: 1px solid $black-20;
+    border-radius: 6px;
+
+    &.listItem {
+        border-left: 0px;
+        border-right: 0px;
+        border-radius: 0px;
+        background-color: transparent;
+    }
+
+    button {
+        &.btn-tertiary{
+            background-color: transparent;
+            border: none;
+        }
+    }
+
+    img {
+        object-fit: scale-down;
+    }
+
+    p {
+        margin-left: 12px;
+        margin-bottom: 0px;
+
+        font-size: var(--g-kit-font-size-omicron);
+        line-height: var(--g-kit-line-height-omicron);
+        font-weight: var(--g-kit-font-weight-regular);
+    }
+
+    p.subValue{
+        color: $black-50;
+        margin-top: 2px;
+        margin-bottom: 0px;
+
+        font-size: var(--g-kit-font-size-omega);
+        line-height: var(--g-kit-line-height-omega);
+        font-weight: var(--g-kit-font-weight-regular);
+    }
+
+}

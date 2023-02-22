@@ -15,7 +15,7 @@ function TableVarian({buttonValue, descValue, borderType, buttonValue2, buttonVa
                 {buttonValue}
             </Button>
 
-            <Offcanvas className="listVarian" show={show} onHide={handleClose} placement={'bottom'} backdrop={'false'}>
+            <Offcanvas className="listVarian" show={show} onHide={handleClose} placement={'bottom'} scroll={true} backdrop={true} >
                 <Offcanvas.Header closeButton className={borderType} >
                     <Offcanvas.Title>{titleValue}</Offcanvas.Title>
                 </Offcanvas.Header>
