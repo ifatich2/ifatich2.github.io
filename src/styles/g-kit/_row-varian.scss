@@ -164,3 +164,120 @@
     }
 
 }
+
+.teContainer {
+
+    .card-header {
+        padding: 1rem;
+        background-color: $white;
+        border-bottom: 2px solid $black-20;
+    }
+
+    .card-footer {
+        text-align: right;
+        text-align: -webkit-right;
+        text-align-last: right;
+    }
+
+    button {
+        &.btn-tertiary{
+            background-color: transparent;
+            border: none;
+            color: $text-secondary;
+        }
+    }
+
+    img {
+        object-fit: cover;
+    }
+
+    p {
+        margin-bottom: 2px;
+
+        font-size: var(--g-kit-font-size-sigma);
+        line-height: var(--g-kit-line-height-sigma);
+        font-weight: var(--g-kit-font-weight-regular);
+    }
+
+    p.saldo{
+        margin-top: 2px;
+        margin-bottom: 2px;
+
+        color: $black-80;
+
+        font-size: var(--g-kit-font-size-kappa);
+        line-height: var(--g-kit-line-height-kappa);
+        font-weight: var(--g-kit-font-weight-bold);
+    }
+
+    p.capSaldoBlokir{
+        margin-top: 2px;
+        margin-bottom: 0px;
+
+        color: $black-60;
+
+        font-size: var(--g-kit-font-size-omega);
+        line-height: var(--g-kit-line-height-omega);
+        font-weight: var(--g-kit-font-weight-regular);
+    }
+
+    span.saldoBlokir{
+        margin-top: 2px;
+        margin-bottom: 0px;
+
+        color: $black-60;
+
+        font-size: var(--g-kit-font-size-omega);
+        line-height: var(--g-kit-line-height-omega);
+        font-weight: var(--g-kit-font-weight-bold);
+    }
+
+}
+
+.riwayatVarian {
+
+    margin-top: -1px;
+    padding: .75rem;
+    border: 1px solid $black-20;
+    border-radius: 6px;
+    
+    img {
+        object-fit: scale-down;
+    }
+
+    .badge {
+        margin-top: 12px;
+    }
+
+    .mb-22 {
+        margin-bottom: 12px;
+    }
+
+    p {
+        margin-bottom: 2px;
+
+        font-size: var(--g-kit-font-size-omicron);
+        line-height: var(--g-kit-line-height-omicron);
+        font-weight: var(--g-kit-font-weight-bold);
+    }
+
+    p.date{
+        margin-top: 2px;
+        margin-bottom: 0;
+
+        color: $black-60;
+
+        font-size: var(--g-kit-font-size-omega);
+        line-height: var(--g-kit-line-height-omega);
+        font-weight: var(--g-kit-font-weight-regular);
+    }
+
+    p.emas {
+        margin-top: 14px;
+        margin-bottom: 0;
+
+        font-size: var(--g-kit-font-size-sigma);
+        line-height: var(--g-kit-line-height-sigma);
+    }
+
+}

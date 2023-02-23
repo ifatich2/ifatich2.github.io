@@ -60,6 +60,9 @@ import AccordionVarian from "./component/molecules/ListGroup/PaymentVarian/Accor
 import GCashVarian from "./component/molecules/ListGroup/GCashVarian/GCashVarian";
 import BankVarian from "./component/molecules/ListGroup/BankVarian/BankVarian";
 import TeVarian from "./component/molecules/ListGroup/TabunganEmasVarian/TabuanganEmasVarian";
+import TeContainerVarian from "./component/molecules/ListGroup/TabunganEmasVarian/TabunganEmasContainerVarian";
+import RiwayatVarian from "./component/molecules/ListGroup/RiwayatVarian/RiwayatVarian";
+import CardRiwayatVarian from "./component/molecules/ListGroup/RiwayatVarian/CardRiwayatVarian";
 
 
 
@@ -839,12 +842,19 @@ function App() {
             <Card.Body>
               <AccordionVarian
                 title="Pilih Varian Pembayaran"
-                imgSpoiler={'images/logo-bank-bri.png'}
+                imgSpoiler={[
+                  'images/logo-bank-bni.png',
+                  'images/logo-bank-bri.png',
+                  'images/logo-bank-mandiri.png',
+                  'images/logo-bank-btn.png',
+                  'images/logo-bank-permata.png',
+                  'images/logo-bank-maybank.png',
+                ]}
                 varianData={[ 
                   { icon: 'images/logo-bank-bri.png', value : "BRI Virtual Account", selected: false },
-                  { icon: 'images/logo-bank-bri.png', value : "BRI Virtual Account", selected: false },
-                  { icon: 'images/logo-bank-bri.png', value : "BRI Virtual Account", selected: false },
-                  { icon: 'images/logo-bank-bri.png', value : "BRI Virtual Account", selected: false },
+                  { icon: 'images/logo-bank-bni.png', value : "BNI Virtual Account", selected: false },
+                  { icon: 'images/logo-bank-mandiri.png', value : "Mandiri Virtual Account", selected: false },
+                  { icon: 'images/logo-bank-btn.png', value : "BTN Virtual Account", selected: false },
                 ]}
               />
 
@@ -855,9 +865,9 @@ function App() {
                 spoiler={"d-none"} //gunakan ketika tidak menggunakan spoiler
                 varianData={[ 
                   { icon: 'images/logo-bank-bri.png', value : "BRI Virtual Account", selected: false },
-                  { icon: 'images/logo-bank-bri.png', value : "BRI Virtual Account", selected: false },
-                  { icon: 'images/logo-bank-bri.png', value : "BRI Virtual Account", selected: false },
-                  { icon: 'images/logo-bank-bri.png', value : "BRI Virtual Account", selected: false },
+                  { icon: 'images/logo-bank-bni.png', value : "BNI Virtual Account", selected: false },
+                  { icon: 'images/logo-bank-mandiri.png', value : "Mandiri Virtual Account", selected: false },
+                  { icon: 'images/logo-bank-btn.png', value : "BTN Virtual Account", selected: false },
                 ]}
               />
             </Card.Body>
@@ -875,7 +885,7 @@ function App() {
                 value={"G Cash BRI"}
                 imgEndVisible={"none"}
                 saldo={"70.000"}
-                iconEnd={'icons/time_regular.svg'}
+                iconEnd={'images/chevron-right.svg'}
               />
 
               <GCashVarian 
@@ -883,7 +893,7 @@ function App() {
                 icon={'images/logo-bank-bri.png'}
                 value={"G Cash BRI"}
                 saldoVisible={"none"}
-                iconEnd={'icons/time_regular.svg'}
+                iconEnd={'images/chevron-right.svg'}
               />
 
               <GCashVarian 
@@ -891,7 +901,7 @@ function App() {
                 icon={'images/logo-bank-bri.png'}
                 value={"G Cash BRI"}
                 saldoVisible={"none"}
-                iconEnd={'icons/time_regular.svg'}
+                iconEnd={'images/chevron-right.svg'}
               />
 
               <GCashVarian 
@@ -899,7 +909,7 @@ function App() {
                 icon={'images/logo-bank-bri.png'}
                 value={"G Cash BRI"}
                 saldoVisible={"none"}
-                iconEnd={'icons/time_regular.svg'}
+                iconEnd={'images/chevron-right.svg'}
               />
             </Card.Body>
           </Card>
@@ -916,7 +926,7 @@ function App() {
                 value={"G Cash BRI"}
                 subValue={"Adm Cost / Account Number"}
                 variant={"tertiary"}
-                buttonValue={"icons/time_regular.svg"}
+                buttonValue={"images/chevron-right.svg"}
               />
 
               <BankVarian 
@@ -925,7 +935,7 @@ function App() {
                 value={"G Cash BRI"}
                 subValue={"Adm Cost / Account Number"}
                 variant={"tertiary"}
-                buttonValue={"icons/time_regular.svg"}
+                buttonValue={"images/chevron-right.svg"}
               />
             </Card.Body>
           </Card>
@@ -938,20 +948,31 @@ function App() {
             </Card.Header>
             <Card.Body>
               <TeVarian 
-                icon={'images/logo-bank-bri.png'}
+                icon={'images/ico-tabungan.svg'}
                 value={"1.231,2399"}
                 subValue={"0821876592828"}
                 variant={"tertiary"}
-                buttonValue={"icons/time_regular.svg"}
+                imgEndVisible={"none"} //Gunakan ketika tidak ingin menampilkan iconEnd
+                iconEnd={"icons/time_regular.svg"} //Wajib ada tapi kalau tidak terpakai gunakan "ImgEndVisible" untuk tidak menampilkan icon
+                buttonValue={"Action"}
               />
 
               <TeVarian 
-                className="listItem mt-3"
-                icon={'images/logo-bank-bri.png'}
+                className="listItem mt-3 mb-3"
+                icon={'images/ico-tabungan.svg'}
                 value={"1.231,2399"}
                 subValue={"0821876592828"}
                 variant={"tertiary"}
-                buttonValue={"icons/time_regular.svg"}
+                imgEndVisible={"none"} //Gunakan ketika tidak ingin menampilkan iconEnd
+                iconEnd={"icons/time_regular.svg"} //Wajib ada tapi kalau tidak terpakai gunakan "ImgEndVisible" untuk tidak menampilkan icon
+                buttonValue={"Action"}
+              />
+
+              <TeContainerVarian 
+                saldo={"0,52145"}
+                icon={"images/ico-tabungan.svg"}
+                saldoBlokir={"0,0062"}
+                nomorRekening={"1111 2222 3333 4444"}
               />
             </Card.Body>
           </Card>
@@ -960,10 +981,25 @@ function App() {
         <Col className='mb-3' lg={6} md={6} xs={12}>
           <Card>
             <Card.Header>
-              <h5>Null</h5>
+              <h5>Riwayat Varian</h5>
             </Card.Header>
             <Card.Body>
-              asdasdjalskj
+              <RiwayatVarian 
+                value={"Catak Emas"}
+                date={"23 Feb 2023"}
+                icon={"images/ico-tabungan.svg"}
+              />
+
+              <CardRiwayatVarian 
+                className={"mt-2"}
+                value={"Catak Emas"}
+                date={"23 Feb 2023"}
+                icon={"images/ico-tabungan.svg"}
+                badge={"warning"}
+                status="Sedang dikirim"
+                emas={"1000"}
+              />
+
             </Card.Body>
           </Card>
         </Col>
@@ -1066,6 +1102,118 @@ function App() {
             </Card.Body>
           </Card>
         </Col>
+
+        <Col className='mb-3' lg={6} md={6} xs={12}>
+          <Card>
+            <Card.Header>
+              <h5>Null</h5>
+            </Card.Header>
+            <Card.Body>
+              asdasdjalskj
+            </Card.Body>
+          </Card>
+        </Col>
+
+        <Col className='mb-3' lg={6} md={6} xs={12}>
+          <Card>
+            <Card.Header>
+              <h5>Null</h5>
+            </Card.Header>
+            <Card.Body>
+              asdasdjalskj
+            </Card.Body>
+          </Card>
+        </Col>
+
+        <Col className='mb-3' lg={6} md={6} xs={12}>
+          <Card>
+            <Card.Header>
+              <h5>Null</h5>
+            </Card.Header>
+            <Card.Body>
+              asdasdjalskj
+            </Card.Body>
+          </Card>
+        </Col>
+
+        <Col className='mb-3' lg={6} md={6} xs={12}>
+          <Card>
+            <Card.Header>
+              <h5>Null</h5>
+            </Card.Header>
+            <Card.Body>
+              asdasdjalskj
+            </Card.Body>
+          </Card>
+        </Col>
+
+        <Col className='mb-3' lg={6} md={6} xs={12}>
+          <Card>
+            <Card.Header>
+              <h5>Null</h5>
+            </Card.Header>
+            <Card.Body>
+              asdasdjalskj
+            </Card.Body>
+          </Card>
+        </Col>
+
+        <Col className='mb-3' lg={6} md={6} xs={12}>
+          <Card>
+            <Card.Header>
+              <h5>Null</h5>
+            </Card.Header>
+            <Card.Body>
+              asdasdjalskj
+            </Card.Body>
+          </Card>
+        </Col>
+
+
+        <Col className='mb-3' lg={6} md={6} xs={12}>
+          <Card>
+            <Card.Header>
+              <h5>Null</h5>
+            </Card.Header>
+            <Card.Body>
+              asdasdjalskj
+            </Card.Body>
+          </Card>
+        </Col>
+
+        <Col className='mb-3' lg={6} md={6} xs={12}>
+          <Card>
+            <Card.Header>
+              <h5>Null</h5>
+            </Card.Header>
+            <Card.Body>
+              asdasdjalskj
+            </Card.Body>
+          </Card>
+        </Col>
+
+        <Col className='mb-3' lg={6} md={6} xs={12}>
+          <Card>
+            <Card.Header>
+              <h5>Null</h5>
+            </Card.Header>
+            <Card.Body>
+              asdasdjalskj
+            </Card.Body>
+          </Card>
+        </Col>
+
+        <Col className='mb-3' lg={6} md={6} xs={12}>
+          <Card>
+            <Card.Header>
+              <h5>Null</h5>
+            </Card.Header>
+            <Card.Body>
+              asdasdjalskj
+            </Card.Body>
+          </Card>
+        </Col>
+
       </Row>
     </Container>
   );

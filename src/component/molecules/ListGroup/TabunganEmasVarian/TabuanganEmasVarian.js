@@ -2,8 +2,8 @@ import Stack from 'react-bootstrap/Stack';
 import Image from "../../image/image";
 import Button from '../../../atoms/Button';
 
-function TeVarian({ icon, gap, value, className = '', subValue, variant, buttonValue, imgEndVisible }) {
-  const hasButton = buttonValue !== null && buttonValue !== undefined;
+function TeVarian({ icon, gap, value, className = '', subValue, variant, buttonValue, imgEndVisible, iconEnd }) {
+  const hasButton = iconEnd !== null && iconEnd !== undefined;
   // menambahkan spasi setiap 4 karakter pada subValue
   const formattedSubValue = subValue.match(/.{1,4}/g).join(' ');
 
@@ -22,7 +22,8 @@ function TeVarian({ icon, gap, value, className = '', subValue, variant, buttonV
       </div>
       {hasButton && (
         <Button className="ms-auto" variant={variant} size="sm">
-          <Image className={"ms-auto mt--1 d-" + imgEndVisible} src={buttonValue} height={16} width={16} alt="" />
+            {buttonValue}
+            <Image className={"ms-auto mt--1 d-" + imgEndVisible} src={iconEnd} height={16} width={16} alt="" />
         </Button>
       )}
     </Stack>

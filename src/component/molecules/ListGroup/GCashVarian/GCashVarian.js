@@ -22,7 +22,7 @@ function GCashVarian({ icon, gap, value, className = '', saldo, variant, buttonV
           {buttonValue}
         </Button>
       )}
-      <Image className={"ms-auto mt--1 d-" + imgEndVisible} src={iconEnd} height={16} width={16} alt="" />
+      <Image className={"ms-auto mt--1 d-" + imgEndVisible} src={iconEnd} height={24} width={24} alt="" />
       <p className={"ms-auto saldo d-" + saldoVisible}>{saldo && `Rp. ${saldo}`}</p>
     </Stack>
   );

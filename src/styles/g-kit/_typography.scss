@@ -2,22 +2,22 @@
 
 @font-face {
     font-family: NunitoSans-ExtraBold;
-    src: url(../../assets/fonts/NunitoSans-ExtraBold.ttf)
+    src: url('../../../public/fonts/NunitoSans-ExtraBold.ttf')
 }
 
 @font-face {
     font-family: NunitoSans-SemiBold;
-    src: url(../../assets/fonts/NunitoSans-SemiBold.ttf)
+    src: url('../../../public/fonts/NunitoSans-SemiBold.ttf')
 }
 
 @font-face {
     font-family: NunitoSans-Regular;
-    src: url(../../assets/fonts/NunitoSans-Regular.ttf)
+    src: url(../../../public/fonts/NunitoSans-Regular.ttf)
 }
 
 @font-face {
     font-family: NunitoSans-Light;
-    src: url(../../assets/fonts/NunitoSans-Light.ttf)
+    src: url(../../../public/fonts/NunitoSans-Light.ttf)
 }
 
 $font-family-sans-serif: 'nunito sans', sans-serif;

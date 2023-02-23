@@ -1,13 +1,13 @@
 import Badge from 'react-bootstrap/Badge';
 import PropTypes from "prop-types";
 
-export const GBadge = ({ BadgeContent, ...props }) => {
+export const GBadge = (props) => {
     return (
-        <Badge bg={props.bg}>
-            { BadgeContent }
-        </Badge>
-    )
-}
+      <Badge bg={props.bg}>
+        {props.BadgeContent}
+      </Badge>
+    );
+};  
 
 GBadge.propTypes = {
     BadgeContent: PropTypes.string,

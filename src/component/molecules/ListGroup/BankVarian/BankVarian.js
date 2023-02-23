@@ -20,7 +20,7 @@ function BankVarian({ icon, gap, value, className = '', subValue, variant, butto
       </div>
       {hasButton && (
         <Button className="ms-auto" variant={variant} size="sm">
-          <Image className={"ms-auto mt--1 d-" + imgEndVisible} src={buttonValue} height={16} width={16} alt="" />
+          <Image className={"ms-auto mt--1 d-" + imgEndVisible} src={buttonValue} height={24} width={24} alt="" />
         </Button>
       )}
     </Stack>

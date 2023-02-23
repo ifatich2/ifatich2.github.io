@@ -12,7 +12,9 @@ const AccordionVarian = ({ title, varianData, className, imgSpoiler, spoiler }) 
         </Accordion.Header>
         <Accordion.Body className={'spoiler-container ' + spoiler}>
           <div className={"spoiler"}>
-            <Image src={imgSpoiler} width={50} height={30} />
+            {Array.isArray(imgSpoiler) && imgSpoiler.map((imgSrc, index) => (
+              <Image key={index} src={imgSrc} width={50} height={30} onError={(e) => { e.target.onerror = null; e.target.src = "default.png" }} />
+            ))}
           </div>
         </Accordion.Body>
         <Accordion.Body className='p-0'>
