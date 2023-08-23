@@ -9,28 +9,25 @@
 <title>React App</title>
 <script defer="defer" src="/static/js/main.152ec018.js"></script>
 <link href="/static/css/main.ae797531.css" rel="stylesheet">
-// include the following lines in your HTML file
-// <script src="amplitude_http_api.js"></script>
-// <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
-// amplitude_http_api.js
-$.ajax({
-    url: 'https://api2.amplitude.com/2/httpapi',
-    method: 'POST',
-    headers: {
-        'Content-Type': 'application/json',
-        'Accept': '*/*'
-    },
-    success: function () {
-        console.log(JSON.stringify({
-            "api_key": "fc0aa3bd4a61ab462e0162815309d49d",
-            "events": [{
-                "device_id": "<INSERT DEVICE ID>",
-                "event_type": "Sign up"
-            }]
-        }));
-    }
-})
+<script>
+    $.ajax({
+        url: 'https://api2.amplitude.com/2/httpapi',
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'Accept': '*/*'
+        },
+        success: function () {
+            console.log(JSON.stringify({
+                "api_key": "fc0aa3bd4a61ab462e0162815309d49d",
+                "events": [{
+                    "device_id": "<INSERT DEVICE ID>",
+                    "event_type": "Sign up"
+                }]
+            }));
+        }
+    })
+</script>
 </head>
 <body>
 <div id="root"></div>
